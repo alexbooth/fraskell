@@ -1,19 +1,12 @@
 import Codec.Picture
 import Codec.Picture.Types
 import System.Environment
-import System.Directory
-import System.Random
-
-import Codec.Picture
-import Control.Monad
-import Control.Monad.ST
 
 main :: IO ()
 main = do
     putStrLn "Beginning rendering of image."
     savePngImage "output.png" generateFractal
     putStrLn "Completed"
-
 
 width = 1920
 height = 1080
