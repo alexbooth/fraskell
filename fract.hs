@@ -8,14 +8,19 @@ main = do
     savePngImage "output.png" generateFractal
     putStrLn "Completed"
 
+width :: Int
 width = 1920
+
+height :: Int
 height = 1080
 
 generateFractal :: DynamicImage
 generateFractal = ImageRGB8 $ generateImage mandelbrot width height
 
+iters :: Int
 iters = 25
 
+palette :: [PixelRGB8]
 palette = foldr (\a -> \b -> (PixelRGB8 (fromIntegral a*10) (fromIntegral a*10) 0):b) [] [0..iters]
 
 mandelbrot :: Int -> Int -> PixelRGB8
